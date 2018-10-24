@@ -1,0 +1,82 @@
+{
+	"response_code": 0,
+	"results": [{
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "medium",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "hard",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+	}, {
+		"category": "DummyCategory",
+		"type": "multiple",
+		"difficulty": "easy",
+		"question": "Dummy question?",
+		"correct_answer": "Dummy answer",
+		"incorrect_answers": ["Answer 1","Answer 2","Answer 3"]
+
+	}]
+}
