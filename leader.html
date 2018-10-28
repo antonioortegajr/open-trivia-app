@@ -18,8 +18,6 @@
 	<article>
        
 		<ul id="scores" class="collection">
-            <li class="collection-item"> 1. nameOne Score: 100000</li>
-
         </ul>
 	</article>
 	<script>
@@ -53,9 +51,10 @@
 			});
 
 			var flipBackNowSortedByScore = arrayFlip(almostSorted);
-			var nowSorted = Object.keys(flipBackNowSortedByScore);
+			var scoresSorted = Object.keys(flipBackNowSortedByScore);
 
-			nowSorted.map((person)=>{
+			// reverse the order one last time and build the html
+			scoresSorted.reverse().map((person)=>{
 				var human = person;
 				var number = scoresData[person];
 				var node = document.createElement("li");
