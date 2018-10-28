@@ -1,8 +1,8 @@
 <template lang="html">
 <div>
   <h2>triv·i·a</h2>
-  <p><em>noun</em><br>
-details, considerations, or pieces of information of little importance or value.</p>
+  <p>Enter your name here</p>
+  <input id="name" />
 <br>
 <p>I love trivia and I thought that you might too.</p>
   <h3>Made by <a href="http://christopherianmurphy.com" class="link-dark">Christopher Murphy</a></h3>

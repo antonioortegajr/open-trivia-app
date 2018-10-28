@@ -10,7 +10,7 @@
         :class="choice.classes">{{ decode(choice.text) }}</button>
       </li>
     </ul>
-    <button v-if="isPaused" @click="advance">Next</button>
+    <button v-if="isPaused" @click="advance" onclick="sendScore()">Next</button>
   </div>
 </template>
 

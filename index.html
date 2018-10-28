@@ -20,7 +20,7 @@
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
 
-  <title>Trivia</title>
+  <title>IDX Trivia</title>
 </head>
 
 <body>
@@ -28,29 +28,48 @@
   <script src="./dist/build.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script>
+
+    // Get the score and the name. Send data to the API to display on leader.html
     var i = 0;
+    var limitScore = 0;
+    let thisScore = 0;
+
     function sendScore(){
+      var getName = document.querySelector('#playerName').innerHTML;
       var targetNode = document.querySelector('.droplet-container');
       var config = { attributes: true, childList: true, subtree: true };
       var callback = function(mutationsList, observer) {
-        var score = document.querySelectorAll('i.droplet.correct').length;
+      var score = document.querySelectorAll('i.droplet.correct').length;
+
+      if(score > 1 && thisScore !== score){
         console.log(score);
-        /*
-        axios.post('https://webhook.site/2798f031-4a37-4e94-9106-db32a6982a7a', {
-          firstName: 'Test',
-          lastName: score
-          })
+        console.log(score);
+        axios.post('https://cewjyc4at0.execute-api.us-west-2.amazonaws.com/idx/scores', {[getName]: score})
           .then(function (response) {
             console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-        });
-        */
-        }
+          });
+        thisScore = score;
+      }
+      else{
+        console.log('no score change');
+      }
+
+      }
+
+      // Only run the mutation observer once per page load
+      if(limitScore == 0){
       var observer = new MutationObserver(callback);
       observer.observe(targetNode, config);
+      }
+      limitScore++;
     }
+    
+    // get the name to send witht he score to the API
+    function nameSubmit(){
+            var playerName = document.querySelector('#player').value;
+            document.querySelector('#playerName').innerHTML = playerName;
+
+          }
   </script>
 </body>
 

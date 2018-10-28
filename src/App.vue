@@ -12,7 +12,12 @@
   
     <main>
       <header :class="classHeader">
-        <h1>Winsome Trivia</h1>
+        <img src="assets/IDX-LOGO-E--01.png" alt="HTML5 Icon" width="128" height="128">
+        <div id="playerName">
+        <input id="player" placeholder="Your Name"/>
+        <br>
+        <button value="submit" onclick="nameSubmit()">Submit</button>
+        </div>      
       </header>
   
       <transition name="expand" mode="out-in">
@@ -195,4 +200,9 @@ main {
 
 
 @media (max-width: 600px) {}
+
+input#player {
+    width: 200px !important;
+    height: 50px !important;
+}
 </style>
