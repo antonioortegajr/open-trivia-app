@@ -43,7 +43,6 @@
 
       if(score > 1 && thisScore !== score){
         console.log(score);
-        console.log(score);
         axios.post('https://cewjyc4at0.execute-api.us-west-2.amazonaws.com/idx/scores', {[getName]: score})
           .then(function (response) {
             console.log(response);

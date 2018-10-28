@@ -16,9 +16,9 @@
 	</header>
 	
 	<article>
-       
-		<ul id="scores" class="collection">
-        </ul>
+		<ul id="scores" class="collection"></ul>
+		<ul id="scores-two" class="collection"></ul>
+		<ul id="scores-three" class="collection"></ul>
 	</article>
 	<script>
 		axios.get('https://s3-us-west-2.amazonaws.com/idx-triva/scores.json')
@@ -26,7 +26,8 @@
 			var scoresList = document.querySelector('#scores');
 			var scoresData = response.data;
 			var persons = Object.keys(scoresData);
-
+			
+			// functions to help sorting
 			function sortNumber(a,b) {
 				return a - b;
 			}
@@ -53,16 +54,27 @@
 			var flipBackNowSortedByScore = arrayFlip(almostSorted);
 			var scoresSorted = Object.keys(flipBackNowSortedByScore);
 
+			var leftOrRight = 0;
+
 			// reverse the order one last time and build the html
 			scoresSorted.reverse().map((person)=>{
+				if(leftOrRight > 20){
+					scoresList = document.querySelector('#scores-three');
+				}
+				else if(leftOrRight > 10){
+					scoresList = document.querySelector('#scores-two');
+				}
+
 				var human = person;
 				var number = scoresData[person];
 				var node = document.createElement("li");
-				node.classList.add("collection-item")
+				node.classList.add("collection-item");
 				var textnode = document.createTextNode(human+ ' Score: '+number);
 				node.appendChild(textnode);
+
 				console.log(human + number);
-				scoresList.appendChild(node)
+				scoresList.appendChild(node);
+				leftOrRight++;
 			})
 		})
 		.catch(function (error) {
@@ -88,6 +100,14 @@ background-color: #1565c0 ; }
 .collection .collection-item {margin: 2%; border-radius: 25% / 250px; line-height: 3.5rem; }
 
 
+ul#scores {
+    width: 50%;
+    float: left;
+}
+ul#scores-two {
+    width: 50%;
+    float: right;
+}
 </style>
  </body>
 </html>

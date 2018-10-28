@@ -2,8 +2,6 @@
 <div>
   <h2>triv·i·a</h2>
   <p>Enter your name here</p>
-  <input id="name" />
-<br>
 <p>I love trivia and I thought that you might too.</p>
   <h3>Made by <a href="http://christopherianmurphy.com" class="link-dark">Christopher Murphy</a></h3>
   <p>Powered by the <a href="https://opentdb.com/" class="link-light">Open Trivia Database</a>.</p>
