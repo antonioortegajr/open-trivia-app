@@ -27,9 +27,35 @@
 		.then(function (response) {
 			var scoresList = document.querySelector('#scores');
 			var scoresData = response.data;
-			var persons = Object.keys(scoresData)
+			var persons = Object.keys(scoresData);
 
-			persons.map((person)=>{
+			function sortNumber(a,b) {
+				return a - b;
+			}
+			function arrayFlip(trans) {
+				var key, tmp_ar = {};
+				for ( key in trans ) {
+					if ( trans.hasOwnProperty( key ) ) {
+						tmp_ar[trans[key]] = key;
+					}
+				}
+				return tmp_ar;
+			}
+
+			var flipArray = arrayFlip(scoresData);
+			var scoreNumbers = Object.keys(flipArray);
+			var newArrayOrderByScore = scoreNumbers.sort(sortNumber);
+			var almostSorted = {};
+
+			newArrayOrderByScore.map((item)=>{
+				var key = Object.keys(item);
+				almostSorted[item] = flipArray[item];
+			});
+
+			var flipBackNowSortedByScore = arrayFlip(almostSorted);
+			var nowSorted = Object.keys(flipBackNowSortedByScore);
+
+			nowSorted.map((person)=>{
 				var human = person;
 				var number = scoresData[person];
 				var node = document.createElement("li");
