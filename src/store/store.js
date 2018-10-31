@@ -44,7 +44,7 @@ export const store = new Vuex.Store({
       context.state.currentView = 'app-loader';
       // Fetch batch of questions for specific category
       let api;
-      let dataUrl = 'data.json';
+      let dataUrl = 'https://s3-us-west-2.amazonaws.com/idx-triva/data.json';
       // Determine if random (default) or chosen category
       if (context.state.currentCategory.name === 'Random') {
         api = dataUrl;
@@ -87,7 +87,7 @@ export const store = new Vuex.Store({
     },
     // Set game over and show modal after 10 rounds
     isGameOver: state => {
-      if (state.round === 9) {
+      if (state.round === 29) {
         state.isGameOver = true;
       }
     },

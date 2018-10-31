@@ -16,8 +16,8 @@ export default {
   data() {
     return {
       counter: -1,
-      quantity: 10,
-      message: ["Doin' the worm", "Fetchin' your trivia", 'Massaging brain tissue'],
+      quantity: 30,
+      message: ["Doin' the worm", "Fetchin' IDX trivia", 'I blame Bau'],
       show: false,
     }
   },

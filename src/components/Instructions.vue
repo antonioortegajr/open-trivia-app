@@ -1,8 +1,11 @@
 <template lang="html">
 <div>
-  <p>Test your trivial knowledge with 10 questions.
-  </br>
+   <p>Test your IDX knowledge with 30 questions from various departments.
+  </br>	  </br>
     Play against a friend, or challenge yourself.</p>
+    Start playing to beat your colleagues on the leaderboard by typing and submitting your name. 
+  </br>
+    You can play multiple times, but you are scored for the first round only.</p>
 </div>
 </template>
 

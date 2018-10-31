@@ -1,10 +1,11 @@
 <template lang="html">
 <div>
-  <h2>triv·i·a</h2>
-  <p>Enter your name here</p>
-<p>I love trivia and I thought that you might too.</p>
-  <h3>Made by <a href="http://christopherianmurphy.com" class="link-dark">Christopher Murphy</a></h3>
-  <p>Powered by the <a href="https://opentdb.com/" class="link-light">Open Trivia Database</a>.</p>
+ <h2>IDX triv·i·a</h2>
+  <p>Enter your name here</p>	  <p>  Start playing to beat your colleagues on the leaderboard by typing and submitting your name. 
+<p>We love trivia and IDX, thought that you might too.</p>	  </br>
+    You can play multiple times.</p>
+  <p>Powered by Frankie and Nichole.</p>
+  <p>Source on Github</p>
 </div>
 </template>
 

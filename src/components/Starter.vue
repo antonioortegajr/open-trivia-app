@@ -1,9 +1,9 @@
 <template lang="html">
   <section class="flex-center-col">
-    <button
+    <button id="single"
     @click="selectMode(true)"
     :class="mode ? 'active' : null"
-    >Single Player</button>
+     >Single Player</button>
     <button id="multi"
     @click="selectMode(false)"
     :class="!mode ? 'active' : null"
@@ -170,4 +170,11 @@ ul {
 #multi {
   display:none;
 }
+#single {
+  display:none;
+}
+#categories{
+  display:none;
+}
+
 </style>

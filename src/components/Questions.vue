@@ -52,7 +52,7 @@ export default {
     // Reset board, present next question
     advance() {
       // Proceed if less than 10 rounds
-      if (this.round <= 8) {
+      if (this.round <= 28) {
         this.$store.commit('pauseGame');
         this.$store.commit('incrementRound');
       }

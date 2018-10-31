@@ -37,7 +37,7 @@ export default {
     },
     // Quantity of dots, dependent on single player or multiplayer
     quantity() {
-      return this.mode ? 10 : 5;
+      return this.mode ? 30 : 5;
     },
     round() {
       return this.$store.getters.round;

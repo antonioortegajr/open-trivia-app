@@ -1,5 +1,6 @@
 <html>
     <head>
+			<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
         <!-- https://materializecss.com/ -->
             <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -10,11 +11,11 @@
     </head>
 	
     <body>
-	<header> 
-	 <div><img src="assets/IDX-LOGO-E--01.png" alt="HTML5 Icon" width="128" height="128">
-	</div>
-	</header>
-	
+		<div class = "row">
+			<div class="col s12 center-align">
+				<img src="assets/IDX-LOGO-E--01.png" alt="HTML5 Icon">
+			</div>
+		</div>
 	<article>
 		<ul id="scores" class="collection"></ul>
 		<ul id="scores-two" class="collection"></ul>
@@ -25,48 +26,38 @@
 		.then(function (response) {
 			var scoresList = document.querySelector('#scores');
 			var scoresData = response.data;
-			var persons = Object.keys(scoresData);
-			
-			// functions to help sorting
-			function sortNumber(a,b) {
-				return a - b;
+
+			var tempArray = [];
+			for (var property1 in scoresData) {
+				tempArray.push({[property1]: scoresData[property1]})
 			}
-			function arrayFlip(trans) {
-				var key, tmp_ar = {};
-				for ( key in trans ) {
-					if ( trans.hasOwnProperty( key ) ) {
-						tmp_ar[trans[key]] = key;
-					}
-				}
-				return tmp_ar;
-			}
+			var sorting = -1;
 
-			var flipArray = arrayFlip(scoresData);
-			var scoreNumbers = Object.keys(flipArray);
-			var newArrayOrderByScore = scoreNumbers.sort(sortNumber);
-			var almostSorted = {};
+			var scoresSorted = tempArray.sort(function(obj1, obj2) {
+				sorting++;
+				// Ascending: less than the previous
+				return obj1[Object.keys(obj1)[0]] - obj2[Object.keys(obj2)[0]];
 
-			newArrayOrderByScore.map((item)=>{
-				var key = Object.keys(item);
-				almostSorted[item] = flipArray[item];
-			});
-
-			var flipBackNowSortedByScore = arrayFlip(almostSorted);
-			var scoresSorted = Object.keys(flipBackNowSortedByScore);
-
+			})
 			var leftOrRight = 0;
 
 			// reverse the order one last time and build the html
 			scoresSorted.reverse().map((person)=>{
-				if(leftOrRight > 20){
+
+				//console.log(person[Object.keys(person)[0]])
+
+				if(leftOrRight > 12){
 					scoresList = document.querySelector('#scores-three');
 				}
-				else if(leftOrRight > 10){
+				else if(leftOrRight > 6){
 					scoresList = document.querySelector('#scores-two');
 				}
+				else {
+					scoresList = document.querySelector('#scores');
+				}
 
-				var human = person;
-				var number = scoresData[person];
+				var human = Object.keys(person);
+				var number = scoresData[Object.keys(person)[0]];
 				var node = document.createElement("li");
 				node.classList.add("collection-item");
 				var textnode = document.createTextNode(human+ ' Score: '+number);
@@ -80,34 +71,51 @@
 		.catch(function (error) {
 			console.log(error);
 		});
+
+
 	</script>
 
 
 <style>
-img {width: 50%; height: auto; padding-left: 33%;}
-
-article {
-    background-color: #8bc34a  ; align: center; 
-    
-}
-
-article > ul {text-align: center; width: 90%; font-weight: 900; font-size: xx-large;  border: 0px; color: #1565c0; font-stretch: expanded !important;
-
-background-color: #1565c0 ; }
- .collection {margin: auto;}
-
-
-.collection .collection-item {margin: 2%; border-radius: 25% / 250px; line-height: 3.5rem; }
-
-
-ul#scores {
-    width: 50%;
-    float: left;
-}
-ul#scores-two {
-    width: 50%;
-    float: right;
-}
+img {
+		width: 150px; 
+		height: auto;
+		margin: 20px;
+	}
+	.row {
+		background-color: #ffffff;
+	}
+	article {
+		margin-top: -20px;
+		background-color: #8bc34a; 
+		text-align: center;     
+	}
+	article > ul {
+		text-align: center;
+		width: 90%;
+		font-weight: 900;
+		font-size: xx-large; 
+		border: 0px; 
+		color: #1565c0; 
+		font-stretch: expanded !important;
+		background-color: #1565c0 ; 
+	}
+	.collection {
+		margin: auto;
+	}
+	.collection .collection-item {
+		margin: 2%; 
+		border-radius: 25% / 250px; 
+		line-height: 3.5rem; 
+	}
+	ul#scores {
+		width: 50%;
+		float: left;
+	}
+	ul#scores-two {
+		width: 50%;
+		float: right;
+	}
 </style>
  </body>
 </html>

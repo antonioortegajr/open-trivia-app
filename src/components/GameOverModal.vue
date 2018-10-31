@@ -4,7 +4,7 @@
       <!-- Single player scores -->
       <div v-if="mode">
         <h1>Game Over!</h1>
-        <h2>Score: {{ scores.playerOne.total }}/10</h2>
+        <h2>Score: {{ scores.playerOne.total }}/30</h2>
         <p>{{ scoreMessage }}</p>
       </div>
       <!-- Multiplayer scores -->
@@ -46,7 +46,7 @@ export default {
         7: 'Not bad. Can you perform this well a second time?',
         8: "You're on your way to becoming a trivia master.",
         9: 'A regular trivia wiz. Nice work.',
-        10: 'Holy snikes!! A perfect score! Excellent work.',
+        10: 'Holy snikes!! Excellent work.',
       };
       let score = this.scores.playerOne.total;
       if (score) {

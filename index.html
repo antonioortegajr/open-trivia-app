@@ -66,10 +66,27 @@
     // get the name to send witht he score to the API
     function nameSubmit(){
             var playerName = document.querySelector('#player').value;
+
+            if(playerName.length < 20 && playerName.length > 0){
             document.querySelector('#playerName').innerHTML = playerName;
+            }
+            else{
+              alert('Sorry, 20 char max on name');
+            }
 
           }
   </script>
+  <style>
+    multi {
+  display:none;
+}
+#single {
+  display:none;
+}
+#categories{
+  display:none;
+}
+  </style>
 </body>
 
 </html>
