@@ -1,7 +1,7 @@
 <template lang="html">
 <div>
  <h2>IDX triv·i·a</h2>
-  <p>Enter your name here</p>	  <p>  Start playing to beat your colleagues on the leaderboard by typing and submitting your name. 
+  <p> Start playing to beat your colleagues on the leaderboard by typing and submitting your name. 
 <p>We love trivia and IDX, thought that you might too.</p>	  </br>
     You can play multiple times.</p>
   <p>Powered by Frankie and Nichole.</p>

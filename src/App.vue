@@ -12,7 +12,7 @@
   
     <main>
       <header :class="classHeader">
-        <img src="assets/IDX-LOGO-E--01.png" alt="HTML5 Icon" width="128" height="128">
+        <img src="assets/IDX-LOGO-E--01.png" alt="HTML5 Icon" width="128">
         <div id="playerName">
         <input id="player" placeholder="Your Name"/>
         <br>
